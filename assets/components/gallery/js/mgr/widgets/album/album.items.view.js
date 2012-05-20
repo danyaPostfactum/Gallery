@@ -124,6 +124,7 @@ Ext.extend(GAL.view.AlbumItems,MODx.DataView,{
         Ext.apply(v,p);
         this.pagingBar.changePage(1);
         this.store.baseParams = v;
+        this.store.baseParams.limit = this.pagingBar.pageSize;
         this.store.load();
     }
         

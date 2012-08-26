@@ -45,6 +45,8 @@ if (empty($scriptProperties['album']) && empty($scriptProperties['tag'])) return
 
 $data = $modx->call('galItem','getList',array(&$modx,$scriptProperties));
 
+if (!is_array($data) || !count($data)) return '';
+
 /* load plugins */
 $plugin = $modx->getOption('plugin',$scriptProperties,'');
 if (!empty($plugin)) {
